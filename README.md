@@ -1,4 +1,4 @@
-└── .env# 🎵 Jarvis Music Player - Complete Media Management System
+🎵 Jarvis Music Player - Complete Media Management System
 
 A professional, full-featured music player system with YouTube integration, playlist management, and a modern web interface. Built with Python, Flask, SQLite, and VLC.
 

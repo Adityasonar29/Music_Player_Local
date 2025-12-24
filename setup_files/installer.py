@@ -29,7 +29,7 @@ def run(cmd, shell=False):
 
 # 2. Run configure.bat ONCE
 print("🔧 Configuring environment...")
-run(["cmd", "/c", "configure.bat"])
+run(["cmd", "/c", "batch_file\\configure.bat"])
 
 
 print("✅ Installation completed successfully.")

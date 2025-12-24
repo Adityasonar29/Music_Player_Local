@@ -39,9 +39,9 @@ except ImportError:
     sys.exit(1)
 
 
-from yt_db import add_music_entry, get_media_info, get_conn, get_playlist_id, is_song_in_playlist, ensure_table
-from ply_yt_2 import download_audio, download_video, search_youtube
-from music_cli import start_server_in_background, stop_server_in_background
+from db.yt_db import add_music_entry, get_media_info, get_conn, get_playlist_id, is_song_in_playlist, ensure_table
+from util.ply_yt_2 import download_audio, download_video, search_youtube
+from music_server_files.music_cli import start_server_in_background, stop_server_in_background
 
     
 last_alive = time.time()

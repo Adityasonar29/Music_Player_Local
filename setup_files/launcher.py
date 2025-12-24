@@ -3,8 +3,8 @@ import time
 import logging
 import sys
 
-from music_cli import start_server_in_background, stop_server_in_background, server_check
-from open_web import open
+from music_server_files.music_cli import start_server_in_background, stop_server_in_background, server_check
+from util.open_web import open
 
 from dotenv import dotenv_values
 env_vars = dotenv_values(".env")

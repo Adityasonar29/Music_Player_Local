@@ -21,8 +21,8 @@ env_vars = dotenv_values(".env")
 
 
 try:
-    import ply_yt_2 as client
-    import yt_db as db
+    import util.ply_yt_2 as client
+    import db.yt_db as db
 except ImportError:
     rprint("[bold red]Error:[/bold red] Could not import 'ply_yt_2' or 'yt_db'.")
     sys.exit(1)

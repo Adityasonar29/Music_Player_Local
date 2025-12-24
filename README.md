@@ -76,6 +76,7 @@ Jarvis_Music_Player/
 ## 🚀 One-Click Launcher Setup
 
 ### Easy Installation
+
 1. Simply run `configure.bat` once to set up the launcher
 2. The installer will automatically:
    - Check for required dependencies
@@ -84,12 +85,15 @@ Jarvis_Music_Player/
    - Create necessary shortcuts
 
 ### Using the Launcher
+
 After installation, you can launch the music player in two ways:
 
 1. **Using the Desktop Shortcut** (created during installation)
-   - Double-click the "Music Player" icon on your desktop
 
+   - Double-click the "Music Player" icon on your desktop
+   
 2. **Using the Batch File**
+
    - Run `bin\musicplayer.bat` from the project directory
    - This will automatically:
      - Activate the virtual environment
@@ -97,6 +101,7 @@ After installation, you can launch the music player in two ways:
      - Open the web interface in your default browser
 
 ### Daily Use
+
 - The launcher handles everything automatically - just click and enjoy!
 - The music server will start in the background
 - The web interface will open in your default browser
@@ -617,8 +622,6 @@ MIT License - See LICENSE file for details.
 - Use local database, no cloud credentials required
 - YouTube downloads respect copyright laws
 - All processing happens locally on your machine
-
-
 
 **Enjoy your music!** 🎶
 

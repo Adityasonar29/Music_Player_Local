@@ -4,7 +4,7 @@
 
 """Clean up duplicate music entries from the database."""
 
-from yt_db import get_duplicate_count, remove_duplicates, remove_perticular_entry
+from db.yt_db import get_duplicate_count, remove_duplicates, remove_perticular_entry
 
 def main():
     print("=" * 60)

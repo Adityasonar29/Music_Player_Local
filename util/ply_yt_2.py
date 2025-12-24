@@ -63,7 +63,7 @@ except:
     YoutubeDL = None
 
 
-from yt_db import add_music_entry, get_media_info, get_conn, get_playlist_id, get_song_from_db, is_song_in_playlist
+from db.yt_db import add_music_entry, get_media_info, get_conn, get_playlist_id, get_song_from_db, is_song_in_playlist
 
 
 # ==============================================================================

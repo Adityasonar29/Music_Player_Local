@@ -1,19 +1,21 @@
 @echo off
 REM ==========================================
-REM Modular Music Player CLI
+REM Modular Music Player Launcher
 REM ==========================================
+
 
 REM Directory where this BAT lives
 set SCRIPT_DIR=%~dp0
 
-REM Project root (one level up from bin)
+REM Project root (one level up from batch_file)
 set PROJECT_ROOT=%SCRIPT_DIR%..
 
 REM Main CLI script
-set CLI_SCRIPT=%PROJECT_ROOT%\music_server_files\music_cli.py
+set CLI_SCRIPT=%PROJECT_ROOT%\setup_files\launcher.py
 
 REM Virtual environment location
 set VENV_DIR=%PROJECT_ROOT%\.venv
+
 
 
 REM ------------------------------------------
@@ -27,6 +29,6 @@ IF %ERRORLEVEL% NEQ 0 (
 
 
 REM ------------------------------------------
-REM Run CLI and pass arguments
+REM Run launcher and pass arguments
 REM ------------------------------------------
 python "%CLI_SCRIPT%" %*

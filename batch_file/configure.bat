@@ -98,7 +98,7 @@ echo ✅ CLI command available
 :: 8. Open browser via Python
 :: -------------------------------------------------
 echo ⤵️ Starting the launcher
-python launcher.py
+python setup_files\launcher.py
 
 :: Wait a bit for server to start
 timeout /t 5 /nobreak >nul

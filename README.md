@@ -140,6 +140,38 @@ batch_file\configure.bat
 
 That’s it.
 
+### 3️⃣ Daily use with launcher
+
+
+Run the launcher:
+
+```bat
+batch_file\launcher.bat
+```
+
+#### You can Create a Desktop Shortcut of this like
+
+step 1: open the folder in file explorer
+
+![Settings](screenshots/shortcut.png)
+
+step 2: Go TO `batch_file'
+
+![Settings](screenshots/batch.png)
+
+step 3: Right click on `launcher.bat`
+
+step 4: press `show more options`
+
+step 5: select `send to` 
+
+step 6: select desktop (create shortcut)
+
+![Settings](screenshots/create.png)
+
+
+
+### You can add any icon to this file to Make it look good by customising Shortcuts properties properties
 ---
 
 ### What `configure.bat` Does Automatically

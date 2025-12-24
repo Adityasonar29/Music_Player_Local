@@ -173,7 +173,7 @@ step 6: select desktop (create shortcut)
 
 
 
-### You can add any icon to this file to Make it look good by customising Shortcuts properties properties
+### You can add any icon to this file to Make it look good by customising Shortcuts properties 
 ---
 
 ### What `configure.bat` Does Automatically

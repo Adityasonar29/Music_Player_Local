@@ -97,12 +97,19 @@ echo ✅ CLI command available
 :: -------------------------------------------------
 :: 8. Open browser via Python
 :: -------------------------------------------------
-echo Starting the launcher
+echo ⤵️ Starting the launcher
 python launcher.py
 
 :: Wait a bit for server to start
 timeout /t 5 /nobreak >nul
+echo ✅ launcher started
 
+:: -------------------------------------------------
+:: 9. Start server
+:: -------------------------------------------------
+echo 🚀 Starting music server...
+musicplayer server start
+echo ✅ Music server started
 
 pause
 endlocal

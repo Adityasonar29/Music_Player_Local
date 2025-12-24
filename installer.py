@@ -27,21 +27,10 @@ def run(cmd, shell=False):
     if result.returncode != 0:
         fail(f"Command failed: {cmd}")
 
-# 1. Check Python
-if not shutil.which("python"):
-    fail("Python not found. Install Python 3.10+ from https://python.org")
-
 # 2. Run configure.bat ONCE
 print("🔧 Configuring environment...")
 run(["cmd", "/c", "configure.bat"])
 
-# 4. Verify CLI
-if not shutil.which("musicplayer"):
-    fail("CLI registration failed. 'musicplayer' not found.")
-
-# 5. Start server
-print("🚀 Starting music server...")
-run(["musicplayer", "server", "start"])
 
 print("✅ Installation completed successfully.")
 logging.info("Installer finished successfully.")

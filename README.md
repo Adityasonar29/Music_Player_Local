@@ -71,6 +71,41 @@ Jarvis_Music_Player/
 - FFmpeg (for audio processing)
 - Node.js (optional, for enhanced features)
 
+---
+
+## 🚀 One-Click Launcher Setup
+
+### Easy Installation
+1. Simply run `configure.bat` once to set up the launcher
+2. The installer will automatically:
+   - Check for required dependencies
+   - Set up a virtual environment
+   - Install all required packages
+   - Create necessary shortcuts
+
+### Using the Launcher
+After installation, you can launch the music player in two ways:
+
+1. **Using the Desktop Shortcut** (created during installation)
+   - Double-click the "Music Player" icon on your desktop
+
+2. **Using the Batch File**
+   - Run `bin\musicplayer.bat` from the project directory
+   - This will automatically:
+     - Activate the virtual environment
+     - Start the music server
+     - Open the web interface in your default browser
+
+### Daily Use
+- The launcher handles everything automatically - just click and enjoy!
+- The music server will start in the background
+- The web interface will open in your default browser
+- To close the application, simply close the browser tab and the server will shut down automatically
+
+---
+
+### IF The Above Step don't Work Then Continue Following steps:
+
 ### Step 1: Clone & Setup
 
 ```bash
@@ -583,7 +618,7 @@ MIT License - See LICENSE file for details.
 - YouTube downloads respect copyright laws
 - All processing happens locally on your machine
 
----
+
 
 **Enjoy your music!** 🎶
 

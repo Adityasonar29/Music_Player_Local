@@ -1,7 +1,32 @@
 @echo off
-REM This script is used to run the Music CLI tool
-REM Activate the virtual environment
-call "E:\Adi_32GR_files\MyCodingHelper\Projects\python_projects\.venv_laptop\Scripts\activate.bat"
+REM ==========================================
+REM Modular Music Player CLI
+REM ==========================================
 
-REM Run your Python script, passing all arguments
-python "E:\Adi_32GR_files\MyCodingHelper\Projects\python_projects\Jarvis_V2_Alpha\services\tools\music_player\music_cli.py" %*
+REM Directory where this BAT lives
+set SCRIPT_DIR=%~dp0
+
+REM Project root (one level up from bin)
+set PROJECT_ROOT=%SCRIPT_DIR%..
+
+REM Main CLI script
+set CLI_SCRIPT=%PROJECT_ROOT%\music_cli.py
+
+REM Virtual environment location
+set VENV_DIR=%PROJECT_ROOT%\.venv
+
+
+REM ------------------------------------------
+REM Activate venv
+REM ------------------------------------------
+call "%VENV_DIR%\Scripts\activate.bat"
+IF %ERRORLEVEL% NEQ 0 (
+    echo ❌ Failed to activate virtual environment
+    exit /b 1
+)
+
+
+REM ------------------------------------------
+REM Run CLI and pass arguments
+REM ------------------------------------------
+python "%CLI_SCRIPT%" %*

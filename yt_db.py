@@ -436,11 +436,3 @@ def get_playlist_id(name: str):
     conn.close()
     return row[0] if row else None
 
-
-    
-if __name__ == "__main__":
-    # print(is_song_in_playlist(2, ""))
-    # print(f"Removed duplicates. Current duplicate count: {show_playlist_duplicates('My playlist')}")
-    # remove_playlist_duplicates("My playlist")
-    print(ensure_table())
-    # print(get_song_from_db("Die with a smile"))

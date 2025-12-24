@@ -45,7 +45,8 @@ env_vars = dotenv_values(".env")
 MUSIC_SERVER_URL = env_vars.get("MUSIC_SERVER_URL")
 
 # Paths
-_PROJECT_ROOT = Path(__file__).resolve().parents[3]
+_PROJECT_ROOT = Path(__file__).resolve().parent
+print("THE PROJECT ROOT:", _PROJECT_ROOT)
 _DEFAULT_DOWNLOAD_ROOT = _PROJECT_ROOT / 'data' / 'downloads' / 'music'
 AUDIO_DOWNLOAD_DIR = str(_DEFAULT_DOWNLOAD_ROOT / 'audio')
 VIDEO_DOWNLOAD_DIR = str(_DEFAULT_DOWNLOAD_ROOT / 'video')
@@ -643,14 +644,7 @@ def download_and_add_to_playlist(playlist_name: str, youtube_query: str) -> bool
         print(f"Error: {e}")
     return False
 
-# ==============================================================================
-# TEST & EXAMPLES
-# ==============================================================================
 
-if __name__ == "__main__":
-    # download_video("pal pal dil ke pass from blackmail by kishore kumar", use_search=True)
-    print(player.get_status())
 
-# CLI here 
-    
+
     

@@ -14,7 +14,7 @@ import subprocess
 
 
 # Setup paths to import your local files
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(os.path.dirname(os.path.abspath(__file__))) 
 
 from dotenv import dotenv_values
 env_vars = dotenv_values(".env")
@@ -438,7 +438,7 @@ def db_list_all():
         table.add_row(str(s['id']), s['name'], str(s['singer']))
     console.print(table)
 
-def server_check(url: str, attempts: int = 3, delay: float = 0.5) -> bool:
+def server_check(url: str = str(SERVER_URL), attempts: int = 3, delay: float = 0.5) -> bool:
     """Pings the music server to ensure it's running."""
     for _ in range(attempts):
         try:
@@ -665,8 +665,8 @@ def restart_server(show_display=None):
     # Start with the specified display setting
     return server_start(show_display)
 
-if __name__ == "__main__":
-    # 1. Check if the server is already running
+def main():
+     # 1. Check if the server is already running
     if server_check(SERVER_URL):
         # Server is already running, proceed immediately
         pass 
@@ -678,3 +678,6 @@ if __name__ == "__main__":
         
     # 3. Execute the user's command via Typer
     app()
+
+if __name__ == "__main__":
+   main()

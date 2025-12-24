@@ -22,6 +22,7 @@ import sqlite3
 import pickle
 from flask_socketio import SocketIO, emit
 from flask_cors import cross_origin
+from flask import send_from_directory, send_file
 
 # Add project root to path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__))))
@@ -38,10 +39,13 @@ except ImportError:
     sys.exit(1)
 
 
-from yt_db import add_music_entry, get_media_info, get_conn, get_playlist_id, is_song_in_playlist
+from yt_db import add_music_entry, get_media_info, get_conn, get_playlist_id, is_song_in_playlist, ensure_table
 from ply_yt_2 import download_audio, download_video, search_youtube
+from music_cli import start_server_in_background, stop_server_in_background
 
-    # sys.exit(1)
+    
+last_alive = time.time()
+HEARTBEAT_TIMEOUT = 5  # seconds
 
 
 DB_PATH = env_vars.get("DB_PATH")
@@ -85,7 +89,9 @@ class MusicEngine:
         self.is_muted = False
         self.shuffle = False
         self.repeat = 'off'  # off, one, all
-        
+
+        ensure_table()
+
         # Monitor thread
         self.running = True
         self.monitor_thread = threading.Thread(target=self._monitor_loop, daemon=True)
@@ -802,7 +808,7 @@ class MusicEngine:
             
         except Exception as e:
             print(f"Failed to load saved playlists: {e}")
-
+        
 # ==============================================================================
 # FLASK SERVER - ENHANCED PLAYLIST ROUTES
 # ==============================================================================
@@ -1111,7 +1117,6 @@ def search():
         return jsonify({'error': 'No search query'}), 400
     return jsonify({'results': engine.search_songs(query, limit)})
 
-
 if __name__ == '__main__':
     print("=" * 60)
     print("MUSIC SERVER STARTING")
@@ -1119,4 +1124,10 @@ if __name__ == '__main__':
     print("Keep this terminal open while using the music player")
     print("=" * 60)
     # app.run(host='0.0.0.0', port=5555, debug=True, use_reloader=True)
-    app.run(host='0.0.0.0', port=5555, debug=False)
+
+    app.run(
+        host='0.0.0.0',
+        port=5555,
+        debug=False,
+        use_reloader=False
+        )

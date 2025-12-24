@@ -39,7 +39,3 @@ def main():
     print("\n" + "=" * 60)
     print("Cleanup complete! Your music library is now clean.")
     print("=" * 60)
-
-if __name__ == "__main__":
-    
-   pass

@@ -151,9 +151,9 @@ batch_file\launcher.bat
 
 #### You can Create a Desktop Shortcut of this like
 
-step 1: open the folder in file explorer
-
 ![Settings](screenshots/shortcut.png)
+
+step 1: open the folder in file explorer
 
 step 2: Go TO `batch_file'
 

@@ -42,7 +42,7 @@ except ImportError:
 from db.yt_db import add_music_entry, get_media_info, get_conn, get_playlist_id, is_song_in_playlist, ensure_table
 from util.ply_yt_2 import download_audio, download_video, search_youtube
 from music_server_files.music_cli import start_server_in_background, stop_server_in_background
-
+from util.open_web import open
     
 last_alive = time.time()
 HEARTBEAT_TIMEOUT = 5  # seconds
@@ -1116,6 +1116,16 @@ def search():
     if not query:
         return jsonify({'error': 'No search query'}), 400
     return jsonify({'results': engine.search_songs(query, limit)})
+
+@app.route('/', methods=['POST', 'GET', 'OPTIONS'])
+@cross_origin()
+def open_web_interface():
+    """Open the web interface in the default browser."""
+    try:
+        send_file("spotify_music_player.html")
+        return jsonify({'status': 'success', 'message': 'Web interface opened in browser.'})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
     print("=" * 60)

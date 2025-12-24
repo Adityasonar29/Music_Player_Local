@@ -155,6 +155,8 @@ batch_file\launcher.bat
 
 step 1: open the folder in file explorer
 
+![Settings](screenshots/folder.png)
+
 step 2: Go TO `batch_file'
 
 ![Settings](screenshots/batch.png)
